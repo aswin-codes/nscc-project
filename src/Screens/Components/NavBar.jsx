@@ -9,7 +9,7 @@ const NavBar = () => {
     setIsPop((prev) => !prev);
   };
   return (
-    <div className="flex w-full bg-transparent backdrop-blur-sm fixed justify-between px-4 py-2 items-center">
+    <div className="flex w-full bg-transparent backdrop-blur-md fixed justify-between px-4 py-2 items-center">
       <div>
         <img src={Logo} className="object-contain h-14" />
       </div>
