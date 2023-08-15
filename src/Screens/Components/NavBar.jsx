@@ -50,14 +50,14 @@ const NavBar = ({page} ) => {
           {/* Popover content */}
           <div className="overflow-hidden ">
             <ul className="">
-              <li>
-                <div className="text-lg  hover:bg-gray-300 px-4 py-2">Home</div>
+              <li onClick={() => navigate('/')}>
+                <div className="text-lg text-black  hover:bg-gray-300 px-4 py-2">Home</div>
               </li>
-              <li>
-                <div className="text-lg hover:bg-gray-300 px-4 py-2">Events</div>
+              <li onClick={() => navigate('/events')}>
+                <div className="text-lg text-black hover:bg-gray-300 px-4 py-2">Events</div>
               </li>
-              <li>
-                <div className="text-lg hover:bg-gray-300 px-4 py-2">
+              <li onClick={() => navigate('/teams')}>
+                <div className="text-lg text-black hover:bg-gray-300 px-4 py-2">
                   Team
                 </div>
               </li>
