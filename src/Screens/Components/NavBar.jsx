@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Logo from "../../assets/logo.png";
 import "../../App.css";
+import { useNavigate } from "react-router-dom";
 
-const NavBar = () => {
+const NavBar = ({page} ) => {
   const [isPop, setIsPop] = useState(false);
-
+  const navigate = useNavigate();
   const togglePop = () => {
     setIsPop((prev) => !prev);
   };
@@ -15,14 +16,14 @@ const NavBar = () => {
       </div>
       <div className="sm:flex items-center space-x-7 hidden ">
         <ul className="flex space-x-12 text-white cursor-pointer">
-          <li>
-            <span className="hover:text-cyan-500">Home</span>
+          <li onClick={() => navigate('/')}>
+            <span className={`hover:text-cyan-500 ${ page=='home' ? 'text-activeblue': ''}` }>Home</span>
           </li>
-          <li>
-            <span className="hover:text-cyan-500">Events</span>
+          <li onClick={() => navigate('/events')} >
+            <span className={`hover:text-cyan-500 ${ page=='events' ? 'text-activeblue': ''}` }>Events</span>
           </li>
-          <li>
-            <span className="text-activeblue">Team</span>
+          <li onClick={() => navigate('/teams')}>
+            <span className={`hover:text-cyan-500 ${ page=='members' ? 'text-activeblue': ''}` }>Team</span>
           </li>
         </ul>
         <button className="buttongradient px-4 py-1 rounded-md text-bg hover:text-white transition duration-200 ease-in-out">
